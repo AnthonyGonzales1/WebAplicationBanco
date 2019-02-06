@@ -75,7 +75,7 @@ namespace WebApplicationBanco.Consultas
                     break;
 
                 case 3://Fecha
-                    DateTime date = DateTime.Parse(BuscarTextBox.Text);
+                    DateTime date = Convert.ToDateTime(BuscarTextBox.Text);
                     filter = (x => x.Fecha == date);
                     break;
 
