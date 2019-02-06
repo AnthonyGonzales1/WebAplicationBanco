@@ -15,7 +15,7 @@ namespace Entities
         public DateTime Fecha { get; set; }
         public string Nombre { get; set; }
         public decimal Balance { get; set; }
-        
+
         public Cuentas()
         {
             CuentaId = 0;
@@ -33,6 +33,5 @@ namespace Entities
             Balance = balance;
 
         }
-
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +15,7 @@ namespace Entities
         public int CuentaId { get; set; }
         public DateTime Fecha { get; set; }
         public string Concepto { get; set; }
-        public decimal Monto { get; set; }
+        public int Monto { get; set; }
         public virtual Cuentas Cuenta { get; set; }
 
         public Depositos()
@@ -28,7 +27,7 @@ namespace Entities
             Monto = 0;
         }
 
-        public Depositos(int id, int cuentaId, DateTime fecha, string concepto, decimal monto)
+        public Depositos(int id, int cuentaId, DateTime fecha, string concepto, int monto)
         {
             DepositoId = id;
             CuentaId = cuentaId;
