@@ -63,6 +63,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLLL\BLL.csproj">
+      <Project>{C0451841-84F2-460B-912B-CCDEE30A7BF0}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entitiess\Entities.csproj">
+      <Project>{E22FC21E-9717-42B2-B125-A818F73A7AC9}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebApplicationBanco\WebApplicationBanco.csproj">
       <Project>{CD77F9B5-7B65-4EDA-B6E7-AA1536D7B837}</Project>
       <Name>WebApplicationBanco</Name>
