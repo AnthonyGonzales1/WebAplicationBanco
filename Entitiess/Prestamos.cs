@@ -17,7 +17,6 @@ namespace Entities
         public float Interes { get; set; }
         public int Tiempo { get; set; }
         public decimal Capital { get; set; }
-        public float InteresTotal { get; set; }
         public decimal Monto { get; set; }
         public virtual List<Cuotas> Detalle { get; set; }
 
@@ -43,7 +42,7 @@ namespace Entities
             Detalle = new List<Cuotas>();
         }
 
-        public Prestamos(int id, int cuentaId, DateTime fecha, decimal capital, float interes, int tiempo, decimal capitaT, decimal monto, List<Cuotas> detalle)
+        public Prestamos(int id, int cuentaId, DateTime fecha, decimal capital, float interes, int tiempo, decimal monto, List<Cuotas> detalle)
         {
             PrestamoId = id;
             CuentaId = cuentaId;
@@ -51,13 +50,13 @@ namespace Entities
             Capital = capital;
             Interes = interes;
             Tiempo = tiempo;
-            Monto = Monto;
+            Monto = monto;
             Detalle = detalle;
         }
 
-        public void AddCuota(int prestamoId, int nopago, decimal capital, decimal interes, decimal cuota, decimal balance)
+        public void AddCuota(int prestamoId, decimal capital, decimal interes, decimal cuota, decimal balance)
         {
-            Detalle.Add(new Cuotas(0, prestamoId, nopago, capital, interes, cuota, balance));
+            Detalle.Add(new Cuotas(0, prestamoId, capital, interes, cuota, balance));
         }
 
         public void AddCuota(string prestamoId, string nopago, string capital, string interes, string cuota, string balance)
@@ -66,7 +65,6 @@ namespace Entities
             Detalle.Add(new Cuotas(
                 0,
                 int.Parse(prestamoId),
-                int.Parse(nopago),
                 decimal.Parse(capital),
                 decimal.Parse(interes),
                 decimal.Parse(cuota),
